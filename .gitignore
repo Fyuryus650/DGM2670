@@ -65,3 +65,7 @@ crashlytics-build.properties
 Battle Tanks app/Library/
 
 Battle Tanks app/Temp/
+
+Battle Tanks app/Logs/
+
+Battle Tanks app/obj/
