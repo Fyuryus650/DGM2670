@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject turret;
     private GameObject player;
+    private GameObject elevControl;
 
     private Rigidbody chassisRB;
 
@@ -16,12 +17,16 @@ public class PlayerController : MonoBehaviour
     private float hInput;
     private float fInput;
     private float turHInput;
+    private float vInput;
+    private float elevSpeed = 10.0f;
+    private float elevLimit;
     private Vector3 turPos = new Vector3(0.0f, 1.2f, 0.0f);
 
     void Start()
     {
         player = GameObject.Find("player");
         turret = GameObject.Find("turret");
+        elevControl = GameObject.Find("tubeControl");
         chassisRB = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
@@ -30,6 +35,7 @@ public class PlayerController : MonoBehaviour
         // Sets inputs for the controls
         hInput = Input.GetAxis("Horizontal");
         fInput = Input.GetAxis("Vertical");
+        vInput = Input.GetAxis("Vertical2");
         turHInput = Input.GetAxis("Horizontal2");
 
         //makes the vehicle go forward
@@ -44,5 +50,12 @@ public class PlayerController : MonoBehaviour
 
         // rotates turret with q and e (ensure Horizontal2 type is set to key or mouse on pc)
         turret.transform.Rotate(Vector3.right, turretTurnSpeed * turHInput * Time.deltaTime);
+
+        // elevates gun tube
+        elevControl.transform.Rotate(Vector3.right, elevSpeed * vInput * Time.deltaTime);
+        elevLimit = Mathf.Clamp(elevLimit, -85, -100);
+        Quaternion elev = elevControl.transform.rotation;
+        elev.x = elevLimit;
+        transform.rotation = elev;
     }
 }
