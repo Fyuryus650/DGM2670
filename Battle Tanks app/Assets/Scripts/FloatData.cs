@@ -13,4 +13,9 @@ public class FloatData : ScriptableObject
         //simple function to add to value
         value += num;
     }
+
+    public void ResetValue(float num)
+    {
+        value = num;
+    }
 }
