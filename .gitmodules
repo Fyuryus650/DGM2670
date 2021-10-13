@@ -1,0 +1,3 @@
+[submodule "GitModels/DGM2670/BattleTanksApp/Assets/Tools"]
+	path = GitModels/DGM2670/BattleTanksApp/Assets/Tools
+	url = https://github.com/anthonyromrell/ArtisanDream.Tools
