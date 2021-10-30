@@ -53,9 +53,5 @@ public class PlayerController : MonoBehaviour
 
         // elevates gun tube
         elevControl.transform.Rotate(Vector3.right, elevSpeed * vInput * Time.deltaTime);
-        elevLimit = Mathf.Clamp(elevLimit, -85, -100);
-        Quaternion elev = elevControl.transform.rotation;
-        elev.x = elevLimit;
-        transform.rotation = elev;
     }
 }
