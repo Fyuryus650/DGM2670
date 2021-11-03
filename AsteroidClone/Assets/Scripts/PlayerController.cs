@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed,turnSpeed;
+    public float turnSpeed;
 
 
     // Start is called before the first frame update
@@ -16,6 +14,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        
+    }
+
+    public void RotatePlayerRight()
+    {
+        transform.Rotate(Vector3.forward * turnSpeed * Time.deltaTime);
+    }
+    public void RotatePlayerLeft()
+    {
+        transform.Rotate(Vector3.forward * -turnSpeed * Time.deltaTime);
     }
 }
