@@ -14,8 +14,4 @@ public class MonoEventsBehaviour : MonoBehaviour
     {
         DestroyEvent.Invoke();
     }
-    public void ButtonPress()
-    {
-        RotatePlayerEvent.Invoke();
-    }
 }
