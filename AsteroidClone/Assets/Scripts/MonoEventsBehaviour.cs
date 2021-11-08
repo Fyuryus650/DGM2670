@@ -3,15 +3,20 @@ using UnityEngine.Events;
 
 public class MonoEventsBehaviour : MonoBehaviour
 {
-    public UnityEvent startEvent, DestroyEvent, ForwardThrustEvent, RotatePlayerEvent;
+    public UnityEvent StartEvent, DestroyEvent, IsGameActive;
     //at the start of the event invokes an event
     private void Start()
     {
-        startEvent.Invoke();
+        StartEvent.Invoke();
     }
 
     private void OnDestroy()
     {
         DestroyEvent.Invoke();
+    }
+
+    public void OnCollisonEnter()
+    {
+        IsGameActive.Invoke();
     }
 }

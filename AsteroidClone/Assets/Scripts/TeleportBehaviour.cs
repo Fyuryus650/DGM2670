@@ -5,9 +5,8 @@ public class TeleportBehaviour : MonoBehaviour
 {
     public UnityEvent TeleportEvent;
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         TeleportEvent.Invoke();
-        print("Entered Collider");
     }
 }
