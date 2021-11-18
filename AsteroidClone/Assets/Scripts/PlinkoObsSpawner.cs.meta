@@ -3,7 +3,11 @@ guid: b684c23d6da12b74fb7864f8b8281446
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - obsPreFab3: {fileID: 6617176207035902099, guid: a6e5c1959e9cf3345a6beb079237cb32,
+      type: 3}
+  - obsPreFab2: {fileID: 6617176207035902099, guid: a6e5c1959e9cf3345a6beb079237cb32,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

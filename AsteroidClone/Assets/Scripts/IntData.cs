@@ -11,6 +11,11 @@ public class IntData : ScriptableObject
         value += num;
     }
 
+    public void SubtractFromValue(int num)
+    {
+        value -= num;
+    }
+
     public void ResetValue(int num)
     {
         value = num;

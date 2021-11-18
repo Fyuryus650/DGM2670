@@ -10,6 +10,7 @@ public class PlinkoObsSpawner : MonoBehaviour
     private void Start()
     {
         isGameActive = true;
+        StartCoroutine(SpawnObstacles());
     }
     void SpawnRow3()
     {
@@ -30,11 +31,11 @@ public class PlinkoObsSpawner : MonoBehaviour
         Instantiate(obsPreFab2, (spawnPos4), obsPreFab2.transform.rotation);
         Instantiate(obsPreFab2, (spawnPos5), obsPreFab2.transform.rotation);
     }
-    IEnumerator SpawnObstacles()
+    public IEnumerator SpawnObstacles()
     {
         while (isGameActive == true)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             
             SpawnRow3();
 

@@ -5,18 +5,13 @@ public class MonoEventsBehaviour : MonoBehaviour
 {
     public UnityEvent StartEvent, DestroyEvent, IsGameActive;
     //at the start of the event invokes an event
-    private void Start()
+    public void Start()
     {
         StartEvent.Invoke();
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         DestroyEvent.Invoke();
-    }
-
-    public void OnCollisonEnter()
-    {
-        IsGameActive.Invoke();
     }
 }
