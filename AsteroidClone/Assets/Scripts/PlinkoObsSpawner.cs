@@ -35,11 +35,11 @@ public class PlinkoObsSpawner : MonoBehaviour
     {
         while (isGameActive == true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.6f);
             
             SpawnRow3();
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.6f);
             
             SpawnRow2();            
         }

@@ -7,18 +7,19 @@ public class UpdateUIEvent : MonoBehaviour
     public UnityEvent UpdateUI;
     public IntData intData;
     public TextMeshProUGUI uIText;
+    public string category;
     private int scoreVal;
 
     private void Start()
     {
+        scoreVal = intData.value;
+        uIText.text = category + scoreVal;
         UpdateUI.Invoke();
-        intData.value = scoreVal;
-        uIText.text = "Score: " + scoreVal;
     }
-    void UpdateScoreValue()
+    public void UpdateScoreValue()
     {
         UpdateUI.Invoke();
-        intData.value = scoreVal;
-        uIText.text = "Score: " + scoreVal;
+        scoreVal = intData.value;
+        uIText.text = category + scoreVal;
     }
 }

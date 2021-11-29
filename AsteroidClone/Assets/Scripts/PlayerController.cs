@@ -3,9 +3,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float turnSpeed;
+    public IntData livesData;
+    private int lives;
 
 
-    // Start is called before the first frame update
+    private void Start()
+    {
+        lives = livesData.value;
+    }
     public void DefaultRot()
     {
         gameObject.transform.rotation = new Quaternion(0f, 0f, 0f,0f);
@@ -20,6 +25,10 @@ public class PlayerController : MonoBehaviour
     }
     public void KillPlayer()
     {
-        Destroy(gameObject);
+        lives = lives - 1;
+        if(lives <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
