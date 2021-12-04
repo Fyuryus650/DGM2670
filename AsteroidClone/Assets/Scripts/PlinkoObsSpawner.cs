@@ -3,14 +3,20 @@ using UnityEngine;
 
 public class PlinkoObsSpawner : MonoBehaviour
 {
-    private Vector3 spawnPos1, spawnPos2, spawnPos3, spawnPos4, spawnPos5;
+    private Vector3 spawnPos1, spawnPos2, spawnPos3, spawnPos4, spawnPos5, ballSpawnRandom;
+    private float ballXspawnPos1 = 3.9f, ballXSpawnPos2 = 9.12f;
     public bool isGameActive;
-    public GameObject obsPreFab3, obsPreFab2;
+    public GameObject obsPreFab3, obsPreFab2, plinkoBallPrefab;
+    public IntData plinkoAmntData;
+    public int instances;
+
     // Start is called before the first frame update
     private void Start()
     {
         isGameActive = true;
         StartCoroutine(SpawnObstacles());
+        StartCoroutine(SpawnBallRoutine());
+        SpawnBall();
     }
     void SpawnRow3()
     {
@@ -31,17 +37,41 @@ public class PlinkoObsSpawner : MonoBehaviour
         Instantiate(obsPreFab2, (spawnPos4), obsPreFab2.transform.rotation);
         Instantiate(obsPreFab2, (spawnPos5), obsPreFab2.transform.rotation);
     }
+
+    public void SpawnBall()
+    {
+        ballSpawnRandom = new Vector3(Random.Range(ballXspawnPos1, ballXSpawnPos2), 8.18f, -0.25f);
+
+        Instantiate(plinkoBallPrefab, (ballSpawnRandom), plinkoBallPrefab.transform.rotation);
+    }
+
+    public void ResetInstances()
+    {
+        instances = plinkoAmntData.value;
+        StartCoroutine(SpawnBallRoutine());
+    }
+
     public IEnumerator SpawnObstacles()
     {
         while (isGameActive == true)
         {
-            yield return new WaitForSeconds(1.6f);
+            yield return new WaitForSeconds(1.7f);
             
             SpawnRow3();
 
-            yield return new WaitForSeconds(1.6f);
+            yield return new WaitForSeconds(1.7f);
             
-            SpawnRow2();            
+            SpawnRow2();
+        }
+    }
+    public IEnumerator SpawnBallRoutine()
+    {
+        if (isGameActive == true && instances > 0)
+        {
+            yield return new WaitForSeconds(1.0f);
+
+            SpawnBall();
+            instances--;
         }
     }
 }
