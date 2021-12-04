@@ -1,15 +1,21 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
     public float turnSpeed;
-    public IntData livesData;
+    public IntData livesData, ammoData;
     private int lives;
+    private Vector3 playerPos;
+    public GameObject projectile;
+
 
 
     private void Start()
     {
         lives = livesData.value;
+        playerPos = gameObject.transform.position;
+        
     }
     public void DefaultRot()
     {
@@ -29,6 +35,29 @@ public class PlayerController : MonoBehaviour
         if(lives <= 0)
         {
             gameObject.SetActive(false);
+        }
+    }
+    private void FireWeaponActions()
+    {
+        Instantiate(projectile, playerPos + (new Vector3(0f, .3f, 0f)), gameObject.transform.rotation);
+    }
+    public void FireWeapon()
+    {
+        StartCoroutine(FireWeaponRoutine());
+    }
+    public IEnumerator FireWeaponRoutine()
+    {
+        while(ammoData.value > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            
+            FireWeaponActions();
+            ammoData.value--;
+            if (ammoData.value < 0)
+            {
+                StopAllCoroutines();
+                ammoData.value = 0;
+            }
         }
     }
 }

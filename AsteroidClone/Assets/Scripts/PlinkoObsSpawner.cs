@@ -21,8 +21,8 @@ public class PlinkoObsSpawner : MonoBehaviour
     void SpawnRow3()
     {
         spawnPos1 = new Vector3(6.4f, -1.86f, -0.16f);
-        spawnPos2 = new Vector3(8.2f, -1.86f, -0.16f);
-        spawnPos3 = new Vector3(4.57f, -1.86f, -0.16f);
+        spawnPos2 = new Vector3(8.45f, -1.86f, -0.16f);
+        spawnPos3 = new Vector3(4.34f, -1.86f, -0.16f);
 
         Instantiate(obsPreFab3, (spawnPos1), obsPreFab3.transform.rotation);
         Instantiate(obsPreFab3, (spawnPos2), obsPreFab3.transform.rotation);
@@ -31,8 +31,8 @@ public class PlinkoObsSpawner : MonoBehaviour
 
     void SpawnRow2()
     {
-        spawnPos4 = new Vector3(5.46f, -1.86f, -0.16f);
-        spawnPos5 = new Vector3(7.33f, -1.86f, -0.16f);
+        spawnPos4 = new Vector3(5.37f, -1.86f, -0.16f);
+        spawnPos5 = new Vector3(7.42f, -1.86f, -0.16f);
 
         Instantiate(obsPreFab2, (spawnPos4), obsPreFab2.transform.rotation);
         Instantiate(obsPreFab2, (spawnPos5), obsPreFab2.transform.rotation);

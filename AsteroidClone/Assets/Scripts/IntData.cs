@@ -4,6 +4,7 @@ using UnityEngine;
 public class IntData : ScriptableObject
 {
     public int value;
+    public bool canGoBelowZero;
 
     public void AddToValue(int num)
     {
@@ -18,6 +19,10 @@ public class IntData : ScriptableObject
     public void MulitplyValue(int num)
     {
         value *= num;
+        if(canGoBelowZero = false && num < 0)
+        {
+            num = num * -1;
+        }
     }
     public void DivideValue(int num)
     {
