@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 353116c500e78794ebc1b06c304df797
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - livesData: {fileID: 11400000, guid: f0cd32dc297e5b24f98a8ef1ad44df34, type: 2}
+  - ammoData: {fileID: 11400000, guid: dd1c84be74f3cea49aee3a4ffc551608, type: 2}
+  - projectile: {fileID: 1010216064444035789, guid: 4b591b3a21fd9194fb1f21a5c20e7d6d,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
