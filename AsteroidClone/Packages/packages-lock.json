@@ -7,13 +7,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.coffee.csharp-compiler-settings": {
-      "version": "https://github.com/mob-sakai/CSharpCompilerSettingsForUnity.git#1.0.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "35da47f756ab58020e4648a5e7f9697627b84d94"
-    },
     "com.unity.collab-proxy": {
       "version": "1.7.1",
       "depth": 0,

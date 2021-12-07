@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.coffee.csharp-compiler-settings": "https://github.com/mob-sakai/CSharpCompilerSettingsForUnity.git#1.0.0",
     "com.unity.collab-proxy": "1.7.1",
     "com.unity.editorcoroutines": "1.0.0",
     "com.unity.formats.fbx": "4.0.1",

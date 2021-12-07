@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     public void KillPlayer()
     {
         lives = lives - 1;
-        if(lives <= 0)
+        if(lives <= 1)
         {
             gameObject.SetActive(false);
         }
@@ -47,9 +47,9 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator FireWeaponRoutine()
     {
-        while(ammoData.value > 0)
+        while(lives >=1)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.0f);
             
             FireWeaponActions();
             ammoData.value--;
