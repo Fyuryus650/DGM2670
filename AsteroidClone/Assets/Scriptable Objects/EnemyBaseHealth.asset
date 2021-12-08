@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b88ce413f8b4e4cb835b93c14d56db, type: 3}
   m_Name: EnemyBaseHealth
   m_EditorClassIdentifier: 
-  value: 100
+  value: 30
+  canGoBelowZero: 0
