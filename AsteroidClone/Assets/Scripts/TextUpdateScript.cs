@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TextUpdateScript : MonoBehaviour
 {
-    public UnityEvent UpdateText,NoHealth;
+    public UnityEvent UpdateText;
     public Text txt;
     public IntData health;
     public int healthVal;
@@ -19,7 +19,7 @@ public class TextUpdateScript : MonoBehaviour
     public void UpdateHealthValue()
     {
         UpdateText.Invoke();
-        healthVal = healthVal - 1;
+        healthVal--;
         txt.text = healthVal.ToString();
     }
 }

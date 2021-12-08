@@ -20,6 +20,10 @@ public class UpdateUIEvent : MonoBehaviour
     {
         UpdateUI.Invoke();
         scoreVal = intData.value;
+        if(intData.value <= -1)
+        {
+            intData.value = 0;
+        }
         uIText.text = category + scoreVal;
     }
 }

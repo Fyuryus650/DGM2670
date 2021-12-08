@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public float speed;
-    private int healthVal;
+    public int healthVal;
     public IntData healthData;
 
     private void Start()
@@ -13,6 +13,11 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * -speed * Time.deltaTime);
+    }
+
+    public void SubtractHealth()
+    {
+        healthVal--;
     }
     
     public void DestroyEvent()
