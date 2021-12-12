@@ -9,6 +9,7 @@ public class WeaponFiring : MonoBehaviour
     private Vector3 playerPos;
     public GameObject projectile;
     public UnityEvent UpdateUI;
+    private bool firingWeapon = false;
 
     private void Start()
     {
@@ -24,8 +25,8 @@ public class WeaponFiring : MonoBehaviour
     }
     public void KillPlayer()
     {
-        lives = lives - 1;
-        if (lives <= 1)
+        lives = livesData.value;
+        if (lives <= 0)
         {
             gameObject.SetActive(false);
         }
@@ -34,6 +35,16 @@ public class WeaponFiring : MonoBehaviour
     {
         StartCoroutine(FireWeaponRoutine());
     }
+
+    public void StopFireWeapon()
+    {
+        if(firingWeapon == true)
+        {
+            StopAllCoroutines();
+            firingWeapon = false;
+            UpdateUIEvent();
+        }
+    }
     public IEnumerator FireWeaponRoutine()
     {
         while (lives >= 1)
@@ -41,13 +52,21 @@ public class WeaponFiring : MonoBehaviour
             yield return new WaitForSeconds(.3f);
 
             playerPos = gameObject.transform.position;
-            FireWeaponActions();
-            ammoData.value--;
-            UpdateUIEvent();
+            //checks if there is ammo to fire before running anything else
             if (ammoData.value <= 0)
             {
+                firingWeapon = false;
                 StopAllCoroutines();
+                ammoData.value = 0;
             }
+
+            FireWeaponActions();
+
+            ammoData.value--;
+
+            UpdateUIEvent();
+
+            firingWeapon = true;
         }
     }
 }

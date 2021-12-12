@@ -4,12 +4,9 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public float speed;
     public int healthVal;
-    public IntData healthData;
+    public IntData healthData, ammoData;
 
-    private void Start()
-    {
-        healthVal = healthData.value;
-    }
+    
     void Update()
     {
         transform.Translate(Vector3.up * -speed * Time.deltaTime);
@@ -24,6 +21,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (healthVal <= 0)
         {
+            ammoData.value = ammoData.value + 5;
             Destroy(gameObject);
         }
     }

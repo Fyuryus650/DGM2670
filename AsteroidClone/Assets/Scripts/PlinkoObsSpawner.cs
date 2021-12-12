@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlinkoObsSpawner : MonoBehaviour
 {
     private Vector3 spawnPos1, spawnPos2, spawnPos3, spawnPos4, spawnPos5, ballSpawnRandom;
-    private float ballXspawnPos1 = 3.9f, ballXSpawnPos2 = 9.12f;
+    private float ballXspawnPos1 = 4.59f, ballXSpawnPos2 = 8.19f;
     public bool isGameActive;
     public GameObject obsPreFab3, obsPreFab2, plinkoBallPrefab;
     public IntData plinkoAmntData;
